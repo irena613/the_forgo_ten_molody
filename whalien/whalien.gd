@@ -14,23 +14,35 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("move_left", "move_right")
 	if direction:
 		velocity.x = direction * SPEED
+		$AnimatedSprite2D.play("run")
+		if direction == -1:
+			$AnimatedSprite2D.flip_h = true
+		else:
+			$AnimatedSprite2D.flip_h = false
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		$AnimatedSprite2D.play("idle")
+		
+	#if not is_on_floor():
+		#$AnimatedSprite2D.play("jump")
+		
 
 	move_and_slide()
 
-@onready var animated_sprite_2d = $AnimatedSprite2D
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	animated_sprite_2d.play("default"); # Replace with function body.
+#@onready var animated_sprite_2d = $AnimatedSprite2D
+#
+## Called when the node enters the scene tree for the first time.
+#func _ready() -> void:
+	#animated_sprite_2d.play("run"); # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+func _on_portal_body_entered(body: Node2D) -> void:
+	get_tree().change_scene_to_file("res://levels/level_1/level_icon_1.tscn") # Replace with function body.
