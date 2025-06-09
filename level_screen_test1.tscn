@@ -1,0 +1,136 @@
+[gd_scene load_steps=14 format=3 uid="uid://vwccqs6oreik"]
+
+[ext_resource type="Texture2D" uid="uid://caokkxq26pl0y" path="res://Space Background (1).png" id="1_cbuou"]
+[ext_resource type="PackedScene" uid="uid://8jbhq0hxbpfq" path="res://levels/level_7/level_icon_7.tscn" id="2_oqvwx"]
+[ext_resource type="PackedScene" uid="uid://dpkraagihu3h1" path="res://levels/level_6/level_icon_6.tscn" id="3_cs2mi"]
+[ext_resource type="PackedScene" uid="uid://7k3txnhfw2w5" path="res://levels/level_5/level_icon_5.tscn" id="4_msoxg"]
+[ext_resource type="PackedScene" uid="uid://y3bronklhchy" path="res://levels/level_4/level_icon_4.tscn" id="5_jfea6"]
+[ext_resource type="PackedScene" uid="uid://cwevgpm7m1v0p" path="res://levels/level_3/level_icon_3.tscn" id="6_v3nx6"]
+[ext_resource type="PackedScene" uid="uid://cugp7ked0y6w0" path="res://levels/level_2/level_icon_2.tscn" id="7_hc5oi"]
+[ext_resource type="PackedScene" uid="uid://cyo0rqvfpca7x" path="res://levels/level_1/level_icon_1.tscn" id="8_7252v"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j3jb8"]
+
+[sub_resource type="Animation" id="Animation_1iqjo"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_y80eq"]
+resource_name = "flote"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.599377, 0.799377, 0.999377, 1.21313, 1.41313),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yagc5"]
+_data = {
+"RESET": SubResource("Animation_1iqjo"),
+"flote": SubResource("Animation_y80eq")
+}
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c0st6"]
+
+[node name="Level Screen" type="Control"]
+layout_mode = 3
+anchor_right = 1.667
+anchor_bottom = 1.52
+offset_right = -0.384033
+offset_bottom = 0.039917
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SpaceBackground(1)" type="Sprite2D" parent="."]
+position = Vector2(960.5, 493.5)
+scale = Vector2(1.921, 1.97)
+texture = ExtResource("1_cbuou")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(710, 625)
+scale = Vector2(0.568623, 2.35417)
+texture = SubResource("CompressedTexture2D_j3jb8")
+vframes = 8
+frame = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D2"]
+libraries = {
+"": SubResource("AnimationLibrary_yagc5")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(474, 304)
+scale = Vector2(0.704714, 2.10802)
+texture = SubResource("CompressedTexture2D_c0st6")
+vframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_yagc5")
+}
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 1923.0
+offset_bottom = 990.0
+
+[node name="Level 7" parent="." instance=ExtResource("2_oqvwx")]
+layout_mode = 2
+anchors_preset = 0
+anchor_bottom = 0.0
+offset_left = 384.0
+offset_top = 251.0
+offset_right = 571.0
+offset_bottom = 407.0
+
+[node name="Level 6" parent="." instance=ExtResource("3_cs2mi")]
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 930.0
+offset_top = 160.0
+offset_right = 1130.0
+offset_bottom = 160.0
+
+[node name="Level 5" parent="." instance=ExtResource("4_msoxg")]
+layout_mode = 2
+offset_left = 1232.0
+offset_top = 243.0
+offset_right = 1432.0
+offset_bottom = 243.0
+
+[node name="Level 4" parent="." instance=ExtResource("5_jfea6")]
+layout_mode = 2
+offset_left = 1460.0
+offset_top = 542.0
+offset_right = 1660.0
+offset_bottom = 542.0
+
+[node name="Level 3" parent="." instance=ExtResource("6_v3nx6")]
+layout_mode = 2
+offset_left = 898.0
+offset_top = 549.0
+offset_right = 1098.0
+offset_bottom = 549.0
+
+[node name="Level 2" parent="." instance=ExtResource("7_hc5oi")]
+layout_mode = 2
+offset_left = 508.0
+offset_top = 673.0
+offset_right = 708.0
+offset_bottom = 673.0
+
+[node name="Level 1" parent="." instance=ExtResource("8_7252v")]
+layout_mode = 2
+offset_left = 206.0
+offset_top = 663.0
+offset_right = 406.0
+offset_bottom = 663.0

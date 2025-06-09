@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbc5exknceec2"]
+
+[ext_resource type="Texture2D" uid="uid://caokkxq26pl0y" path="res://Space Background (1).png" id="1_dfwkh"]
+[ext_resource type="Script" path="res://menu/main_menu.gd" id="1_onjuo"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_onjuo")
+
+[node name="SpaceBackground(1)" type="Sprite2D" parent="."]
+position = Vector2(577, 331)
+scale = Vector2(1.15, 1.304)
+texture = ExtResource("1_dfwkh")
+
+[node name="Title" type="Label" parent="."]
+offset_top = 30.0
+offset_right = 1147.0
+offset_bottom = 69.0
+theme_type_variation = &"HeaderLarge"
+text = "Lost Simphony "
+horizontal_alignment = 1
+
+[node name="StartButton" type="Button" parent="Title"]
+layout_mode = 0
+offset_left = 542.0
+offset_top = 183.0
+offset_right = 588.0
+offset_bottom = 214.0
+text = "Start
+"
+
+[connection signal="pressed" from="Title/StartButton" to="." method="_on_start_button_pressed"]

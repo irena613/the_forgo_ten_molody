@@ -1,0 +1,85 @@
+[gd_scene load_steps=11 format=3 uid="uid://vwccqs6oreik"]
+
+[ext_resource type="Texture2D" uid="uid://caokkxq26pl0y" path="res://Space Background (1).png" id="1_cbuou"]
+[ext_resource type="Script" path="res://level_screen.gd" id="1_vixf6"]
+[ext_resource type="PackedScene" uid="uid://8jbhq0hxbpfq" path="res://levels/level_7/level_icon_7.tscn" id="2_oqvwx"]
+[ext_resource type="PackedScene" uid="uid://dpkraagihu3h1" path="res://levels/level_6/level_icon_6.tscn" id="3_cs2mi"]
+[ext_resource type="PackedScene" uid="uid://7k3txnhfw2w5" path="res://levels/level_5/level_icon_5.tscn" id="4_msoxg"]
+[ext_resource type="PackedScene" uid="uid://y3bronklhchy" path="res://levels/level_4/level_icon_4.tscn" id="5_jfea6"]
+[ext_resource type="PackedScene" uid="uid://cwevgpm7m1v0p" path="res://levels/level_3/level_icon_3.tscn" id="6_v3nx6"]
+[ext_resource type="PackedScene" uid="uid://cugp7ked0y6w0" path="res://levels/level_2/level_icon_2.tscn" id="7_hc5oi"]
+[ext_resource type="PackedScene" uid="uid://cyo0rqvfpca7x" path="res://levels/level_1/level_icon_1.tscn" id="8_7252v"]
+[ext_resource type="PackedScene" uid="uid://fyymel4jyj4j" path="res://player_icon.tscn" id="16_7tab1"]
+
+[node name="Level Screen" type="Control"]
+layout_mode = 3
+anchor_right = 1.667
+anchor_bottom = 1.52
+offset_right = -0.384033
+offset_bottom = 0.039856
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vixf6")
+
+[node name="SpaceBackground(1)" type="Sprite2D" parent="."]
+position = Vector2(960.5, 493.5)
+scale = Vector2(1.921, 1.97)
+texture = ExtResource("1_cbuou")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+
+[node name="LevelIcon1" parent="CanvasGroup" instance=ExtResource("8_7252v")]
+offset_left = 230.0
+offset_top = 694.0
+offset_right = 448.0
+offset_bottom = 950.0
+pivot_offset = Vector2(50, 50)
+
+[node name="LevelIcon2" parent="CanvasGroup" instance=ExtResource("7_hc5oi")]
+offset_left = 642.0
+offset_top = 590.0
+offset_right = 841.0
+offset_bottom = 792.0
+pivot_offset = Vector2(50, 50)
+
+[node name="LevelIcon3" parent="CanvasGroup" instance=ExtResource("6_v3nx6")]
+offset_left = 1104.0
+offset_top = 699.0
+offset_right = 1279.0
+offset_bottom = 906.0
+pivot_offset = Vector2(50, 50)
+
+[node name="LevelIcon4" parent="CanvasGroup" instance=ExtResource("5_jfea6")]
+offset_left = 1461.0
+offset_top = 431.0
+offset_right = 1771.0
+offset_bottom = 714.0
+pivot_offset = Vector2(50, 50)
+
+[node name="LevelIcon5" parent="CanvasGroup" instance=ExtResource("4_msoxg")]
+offset_left = 1248.0
+offset_top = 238.0
+offset_right = 1424.0
+offset_bottom = 452.0
+
+[node name="LevelIcon6" parent="CanvasGroup" instance=ExtResource("3_cs2mi")]
+offset_left = 740.0
+offset_top = 135.0
+offset_right = 841.472
+offset_bottom = 262.856
+
+[node name="LevelIcon7" parent="CanvasGroup" instance=ExtResource("2_oqvwx")]
+offset_left = 328.0
+offset_top = 262.0
+offset_right = 490.0
+offset_bottom = 452.112
+
+[node name="PlayerIcon" parent="CanvasGroup" instance=ExtResource("16_7tab1")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 254.0
+offset_top = 614.0
+offset_right = 386.0
+offset_bottom = 696.0
+grow_horizontal = 2
