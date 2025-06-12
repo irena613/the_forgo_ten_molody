@@ -12,4 +12,21 @@ func _process(delta: float) -> void:
 
 
 func _on_start_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://level_1.tscn") # Replace with function body.
+	# Reset progress and start new game
+	Global.reset_progress()
+	get_tree().change_scene_to_file("res://level_1.tscn")
+
+
+func _on_continue_pressed() -> void:
+	# Load saved game and continue
+	Global.load_game()
+	get_tree().change_scene_to_file("res://level_screen.tscn")
+
+
+func _on_controls_pressed() -> void:
+	get_tree().change_scene_to_file("res://controls.tscn")
+
+
+func _on_quit_game_pressed() -> void:
+	get_tree().quit()
+	

@@ -17,6 +17,11 @@ config/features=PackedStringArray("4.3", "GL Compatibility")
 [autoload]
 
 Global="*res://global.gd"
+AudioManager="*res://audio_manager.gd"
+
+[display]
+
+window/size/mode=3
 
 [input]
 

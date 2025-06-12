@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=4 uid="uid://brec35kdhw187"]
 
-[ext_resource type="Script" path="res://level_1.gd" id="1_m4jrn"]
+[ext_resource type="Script" path="res://level_4.gd" id="1_rn22m"]
 [ext_resource type="Texture2D" uid="uid://dtn3wu518wara" path="res://bg_level_4.png" id="2_5qy65"]
 [ext_resource type="Texture2D" uid="uid://dd0xyrvtu6saa" path="res://Assets/Tilemap/monochrome_tilemap_transparent.png" id="3_weum3"]
 [ext_resource type="PackedScene" uid="uid://d1cdmrit6unt2" path="res://portal/portal.tscn" id="4_c6lp2"]
@@ -614,7 +614,7 @@ sources/0 = SubResource("TileSetAtlasSource_cwp53")
 
 [node name="Level4" type="Node2D"]
 position = Vector2(-2, 0)
-script = ExtResource("1_m4jrn")
+script = ExtResource("1_rn22m")
 
 [node name="SpaceBackground(1)" type="Sprite2D" parent="."]
 self_modulate = Color(1, 1, 1, 0.811765)
@@ -641,19 +641,21 @@ scale = Vector2(0.3, 0.3)
 
 [node name="LevelLable" type="Label" parent="CanvasLayer"]
 offset_left = 30.0
-offset_top = 29.0
-offset_right = 84.0
-offset_bottom = 52.0
-text = "Level 1
+offset_top = 24.0
+offset_right = 204.0
+offset_bottom = 96.0
+theme_override_font_sizes/font_size = 52
+text = "Level 4
 "
 metadata/_edit_use_anchors_ = true
 
 [node name="NotesLable" type="Label" parent="CanvasLayer"]
 offset_left = 30.0
-offset_top = 63.0
-offset_right = 94.0
-offset_bottom = 86.0
-text = "Notes: 0"
+offset_top = 96.0
+offset_right = 236.0
+offset_bottom = 168.0
+theme_override_font_sizes/font_size = 52
+text = "Notes: 0/13"
 metadata/_edit_use_anchors_ = true
 
 [node name="Notes" type="Node" parent="."]
@@ -719,4 +721,3 @@ position = Vector2(-118, -39)
 [connection signal="child_entered_tree" from="Borders/Border3" to="." method="_on_border_3_child_entered_tree"]
 [connection signal="body_entered" from="Borders/Border4" to="." method="_on_border_4_body_entered"]
 [connection signal="body_entered" from="Borders/Border2" to="." method="_on_border_2_body_entered"]
-[connection signal="body_entered" from="Borders/Border" to="." method="_on_border_body_entered"]

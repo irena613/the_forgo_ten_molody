@@ -41,7 +41,7 @@ position = Vector2(24, 24)
 scale = Vector2(3, 3)
 script = ExtResource("1_lae2e")
 
-[node name="7-76047Portal-portal-pixel-art" type="Sprite2D" parent="."]
+[node name="portal_image" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(-6.10352e-05, 0.678619)
 scale = Vector2(0.035, 0.0281051)
@@ -54,4 +54,3 @@ shape = SubResource("RectangleShape2D_xmc4f")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_totxt")
 animation = &"open"
-frame_progress = 0.892555

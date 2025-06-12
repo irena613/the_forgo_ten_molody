@@ -1,6 +1,7 @@
-extends Area2D
+extends "res://notes/note_base.gd"
 
-signal note_collected
+# The base script handles all the functionality
+# We can add note-specific behavior here if needed
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,7 +16,6 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Whalien":
 		Global.notes_collected += 1
-		note_collected.emit()
 		print_debug("note type 4 collected")
 		queue_free()
 	
